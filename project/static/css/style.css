@@ -4,7 +4,7 @@ body {
   }
 
   header {
-    background: url('../static/images/hero.jpg') no-repeat center center/cover;
+    background: url('../images/hero.jpg') no-repeat center center/cover;
     color: rgba(255, 255, 255, 0.897);
     min-height: 60vh;
     padding-top: 70px;
