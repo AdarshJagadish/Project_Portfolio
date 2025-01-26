@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(250, 232, 198, 0.863);
+  }
+
+  header {
+    background: url('../static/images/hero.jpg') no-repeat center center/cover;
+    color: rgba(255, 255, 255, 0.897);
+    min-height: 60vh;
+    padding-top: 70px;
+  }
+  
+  #about img {
+    margin-top: 15px;
+  }
+
+  .bg-color{
+    background-color: rgba(236, 222, 206, 0.801);
+  }
+
+  .card_text {
+    text-decoration: none;
+    color: black;
+  }
+
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .footer {
+    background-color: rgb(27, 24, 24);
+    color: rgb(245, 239, 233);
+  }
+  /* navbar */
+/* Navbar background */
+.navbar {
+  background-color: rgb(27, 24, 24); /* Dark background */
+  border: none;
+  box-shadow: none;
+}
+
+/* Ensure the text is visible on dark background */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.795);
+}
+
+/* Hover effect for navbar items */
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(250, 232, 198, 0.863);
+}
+
+/* Navbar alignment for home icon on left and other items on right */
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-nav .nav-item:first-child {
+  margin-right: auto; /* Push the home icon to the left */
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px; /* Optional: adds space between items */
+}
+ 
+  /* Font 1 */
+
+  .font-regular {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .font-bold {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .font-regular-italic {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  /* Font 2 */
+
+  .nav-font-light {
+    font-family: "Chakra Petch", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .nav-font-medium {
+    font-family: "Chakra Petch", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .nav-font-semibold {
+    font-family: "Chakra Petch", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .nav-font--bold {
+    font-family: "Chakra Petch", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
