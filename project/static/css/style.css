@@ -4,12 +4,12 @@ body {
   }
 
   header {
-    background: url('../static/images/hero.jpg') no-repeat center center/cover;
+    background: url('../images/hero.jpg') no-repeat center center/cover;
     color: rgba(255, 255, 255, 0.897);
     min-height: 60vh;
     padding-top: 70px;
   }
-  
+
   #about img {
     margin-top: 15px;
   }
@@ -63,7 +63,7 @@ body {
 .navbar-nav .nav-item {
   margin-left: 10px; /* Optional: adds space between items */
 }
- 
+
   /* Font 1 */
 
   .font-regular {
@@ -71,19 +71,19 @@ body {
     font-weight: 400;
     font-style: normal;
   }
-  
+
   .font-bold {
     font-family: "Libre Caslon Text", serif;
     font-weight: 700;
     font-style: normal;
   }
-  
+
   .font-regular-italic {
     font-family: "Libre Caslon Text", serif;
     font-weight: 400;
     font-style: italic;
   }
-  
+
   /* Font 2 */
 
   .nav-font-light {
@@ -91,22 +91,21 @@ body {
     font-weight: 300;
     font-style: normal;
   }
-  
+
   .nav-font-medium {
     font-family: "Chakra Petch", serif;
     font-weight: 500;
     font-style: normal;
   }
-  
+
   .nav-font-semibold {
     font-family: "Chakra Petch", serif;
     font-weight: 600;
     font-style: normal;
   }
-  
+
   .nav-font--bold {
     font-family: "Chakra Petch", serif;
     font-weight: 700;
     font-style: normal;
   }
-  
