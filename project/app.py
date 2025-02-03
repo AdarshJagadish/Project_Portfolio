@@ -10,7 +10,7 @@ app.config['MAIL_PORT'] = 587  # Port for TLS
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = 'contact.adarshjagadish@gmail.com'  # Your email
-app.config['MAIL_PASSWORD'] = 'Sachu@007'  # Your email password
+app.config['MAIL_PASSWORD'] = 'xnxt ojat cfwn kjor'  # Your email password
 app.config['MAIL_DEFAULT_SENDER'] = ('contact.adarshjagadish@gmail.com')  # Sender info
 
 mail = Mail(app)
