@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,11 +40,11 @@
   </header>
 
   {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      {% for category, message in messages %}
-        <div class="alert alert-{{ category }}">{{ message }}</div>
-      {% endfor %}
-    {% endif %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{ category }}">{{ message }}</div>
+  {% endfor %}
+  {% endif %}
   {% endwith %}
 
   <section class="hero section" id="hero">
@@ -113,18 +114,27 @@
   <section class="section" id="portfolio">
     <h2 class="section-title">Portfolio</h2>
     <div class="portfolio">
-      <div class="project">
-        <h4>Weather App</h4>
-        <p>Weather app using OpenWeatherMap API and JavaScript.</p>
-      </div>
-      <div class="project">
-        <h4>To-Do List</h4>
-        <p>A task management tool using React & RestAPI.</p>
-      </div>
-      <div class="project">
+      <a href="https://github.com/AdarshJagadish/Weather">
+        <div class="project">
+          <h4>Weather App</h4>
+          <p>Weather app using OpenWeatherMap API and JavaScript.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/AdarshJagadish/Project_React_TodoList">
+        <div class="project">
+          <h4>To-Do List</h4>
+          <p>A task management tool using React & RestAPI.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/AdarshJagadish/Project_Motoselvic">
+        <div class="project">
         <h4>Ecommerce Site</h4>
         <p>Fullstack ecommerce platform with Django and RazorPay integration.</p>
       </div>
+      </a>
+      
     </div>
   </section>
 
@@ -140,8 +150,8 @@
 
   <section class="section" id="resume">
     <h2 class="section-title">Resume</h2>
-    <a href="https://drive.google.com/file/d/1AxJk3ddQ82QqkDf1A_gpjKpn70DGjgWC/view?usp=drive_link"
-       class="resume-btn" target="_blank">View My Resume</a>
+    <a href="https://drive.google.com/file/d/1AxJk3ddQ82QqkDf1A_gpjKpn70DGjgWC/view?usp=drive_link" class="resume-btn"
+      target="_blank">View My Resume</a>
   </section>
 
   <section class="section" id="social">
@@ -151,7 +161,7 @@
       <a href="https://www.linkedin.com/in/adarshjagadish/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://www.instagram.com/lucifer__ftw/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
       <a href="https://www.threads.net/@lucifer__ftw?xmt=AQGzQN18AZd4xcMcElUeaSbvboNVWkqfiYlsU95KJQSmyGg"
-         target="_blank"><i class="fas fa-hashtag"></i> Threads</a>
+        target="_blank"><i class="fas fa-hashtag"></i> Threads</a>
       <a href="https://wa.me/919846675300" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
   </section>
@@ -163,4 +173,5 @@
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
+
 </html>
