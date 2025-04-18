@@ -1,111 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-padding-top: 40px;
+  /* Adjust this based on your navbar height */
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(250, 232, 198, 0.863);
-  }
-
-  header {
-    background: url('../images/hero.jpg') no-repeat center center/cover;
-    color: rgba(255, 255, 255, 0.897);
-    min-height: 60vh;
-    padding-top: 70px;
-  }
-
-  #about img {
-    margin-top: 15px;
-  }
-
-  .bg-color{
-    background-color: rgba(236, 222, 206, 0.801);
-  }
-
-  .card_text {
-    text-decoration: none;
-    color: black;
-  }
-
-  .card img {
-    height: 200px;
-    object-fit: cover;
-  }
-  .footer {
-    background-color: rgb(27, 24, 24);
-    color: rgb(245, 239, 233);
-  }
-  /* navbar */
-/* Navbar background */
-.navbar {
-  background-color: rgb(27, 24, 24); /* Dark background */
-  border: none;
-  box-shadow: none;
+  background-color: #0f0f0f;
+  color: #fff;
 }
 
-/* Ensure the text is visible on dark background */
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.795);
-}
-
-/* Hover effect for navbar items */
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(250, 232, 198, 0.863);
-}
-
-/* Navbar alignment for home icon on left and other items on right */
-.navbar-nav {
+header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: sticky;
+  top: 0;
+  background-color: #0f0f0f;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
+
+.hire-btn {
+  background: #00ffcc;
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hire-btn:hover {
+  color: #000 !important;
+  /* Ensures text color becomes black on hover */
+}
+
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero img {
+  width: 320px;
+  margin-bottom: 1.5rem;
+  margin-right: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h3 {
+  font-weight: 400;
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}
+
+.hero .cta {
+  background: #00ffcc;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+h2.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00ffcc;
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.services,
+.portfolio,
+.skills-grid,
+.education-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  text-align: center;
+}
+
+.service,
+.project,
+.skill-box,
+.edu-box {
+  padding: 2rem;
+  border: 1px solid #222;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+}
+
+.project h4 {
+  margin-bottom: 0.5rem;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background: #222;
+  color: #fff;
+}
+
+.contact button {
+  padding: 0.75rem;
+  background: #00ffcc;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.resume-btn {
+  display: inline-block;
+  background: #00ffcc;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem auto;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.social-links a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #888;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #00ffcc;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #0f0f0f;
+  position: absolute;
+  top: 100%;
+  right: 0;
   width: 100%;
+  padding: 1rem 2rem;
+  z-index: 999;
 }
 
-.navbar-nav .nav-item:first-child {
-  margin-right: auto; /* Push the home icon to the left */
+.mobile-nav a {
+  padding: 0.75rem 0;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.navbar-nav .nav-item {
-  margin-left: 10px; /* Optional: adds space between items */
+.mobile-nav a:hover {
+  color: #00ffcc;
 }
 
-  /* Font 1 */
+.mobile-nav .hire-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  text-align: center;
+}
 
-  .font-regular {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 400;
-    font-style: normal;
+.hamburger.open i::before {
+  content: "\f00d";
+  /* FontAwesome 'X' */
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
   }
 
-  .font-bold {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 700;
-    font-style: normal;
+  .hero img {
+    margin: 0;
+    width: 320px;
+    margin-right: 2rem;
   }
 
-  .font-regular-italic {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 400;
-    font-style: italic;
+  .hero-text {
+    max-width: 60%;
   }
 
-  /* Font 2 */
+  .mobile-nav {
+    display: none !important;
+  }
+}
 
-  .nav-font-light {
-    font-family: "Chakra Petch", serif;
-    font-weight: 300;
-    font-style: normal;
+@media (max-width: 767px) {
+  nav {
+    display: none;
   }
 
-  .nav-font-medium {
-    font-family: "Chakra Petch", serif;
-    font-weight: 500;
-    font-style: normal;
+  .hamburger {
+    display: block;
   }
 
-  .nav-font-semibold {
-    font-family: "Chakra Petch", serif;
-    font-weight: 600;
-    font-style: normal;
+  .hire-btn-desktop {
+    display: none;
   }
-
-  .nav-font--bold {
-    font-family: "Chakra Petch", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
+}

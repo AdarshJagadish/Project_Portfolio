@@ -5,19 +5,18 @@ app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
 # Email configuration
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # SMTP server
-app.config['MAIL_PORT'] = 587  # Port for TLS
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'contact.adarshjagadish@gmail.com'  # Your email
-app.config['MAIL_PASSWORD'] = 'xnxt ojat cfwn kjor'  # Your email password
-app.config['MAIL_DEFAULT_SENDER'] = ('contact.adarshjagadish@gmail.com')  # Sender info
+app.config['MAIL_USERNAME'] = 'contact.adarshjagadish@gmail.com'
+app.config['MAIL_PASSWORD'] = 'xnxt ojat cfwn kjor'
+app.config['MAIL_DEFAULT_SENDER'] = ('contact.adarshjagadish@gmail.com')
 
 mail = Mail(app)
 
 @app.route('/')
 def index():
-    # Renders the home page
     return render_template('index.html')
 
 @app.route('/contact_me', methods=['POST'])
@@ -27,15 +26,13 @@ def contact_me():
         email = request.form['email']
         message = request.form['message']
 
-        # Create email message
         msg = Message(
             subject="Contact Form Submission",
-            recipients=['jagadishadarsh@gmail.com'],  # Recipient email
+            recipients=['jagadishadarsh@gmail.com'],
             body=f"Name: {name}\nEmail: {email}\nMessage: {message}"
         )
-        print(name,email,message)
         try:
-            mail.send(msg)  # Send the email
+            mail.send(msg)
             flash("!! Thank You for your response. I will connect with you ASAP !!", "success")
         except Exception as e:
             print(f"Error: {e}")
