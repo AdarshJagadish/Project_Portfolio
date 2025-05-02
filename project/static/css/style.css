@@ -1,3 +1,4 @@
+/* Reset and basics */
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +10,31 @@
 html {
   scroll-padding-top: 40px;
   /* Adjust this based on your navbar height */
+  height: 100%;
+  background: #0f0f0f;
+  overflow-x: hidden;
 }
-
 
 body {
-  background-color: #0f0f0f;
+  min-height: 100%;
   color: #fff;
+  position: relative;
+  background: transparent;
+  overflow-x: hidden;
 }
 
+/* Animated background canvas */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -24,8 +42,11 @@ header {
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
-  background-color: #0f0f0f;
+  background-color: rgba(15, 15, 15, 0.85);
+  backdrop-filter: saturate(180%) blur(10px);
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 255, 204, 0.15);
+  transition: background-color 0.3s ease;
 }
 
 nav {
@@ -37,6 +58,24 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00ffcc;
+  transition: 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
@@ -51,43 +90,68 @@ nav a:hover {
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .hire-btn:hover {
   color: #000 !important;
-  /* Ensures text color becomes black on hover */
+  transform: scale(1.1);
+  /* Slight scale up on hover */
 }
 
-
+/* Sections */
 .section {
   padding: 4rem 2rem;
   max-width: 1100px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 1rem;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .hero img {
   width: 320px;
+  border-radius: 15px;
   margin-bottom: 1.5rem;
   margin-right: 2rem;
+  /* Remove or adjust the box-shadow */
+  /* box-shadow: 0 0 20px #00ffcc88; */
+  /* filter: drop-shadow(0 0 10px #00ffcc99); */
+  transition: transform 0.3s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.05) rotate(2deg);
+  filter: drop-shadow(0 0 20px #00ffccee);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 6px #00ffccaa;
 }
 
 .hero h3 {
   font-weight: 400;
   color: #a0a0a0;
   margin-bottom: 2rem;
+  text-shadow: 0 0 4px #00ffcc77;
 }
 
 .hero .cta {
@@ -97,22 +161,37 @@ nav a:hover {
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 20px #00ffccbb;
 }
 
+.hero .cta:hover {
+  background-color: #00ddbb;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #00ffccdd;
+}
+
+/* Titles */
 h2.section-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
   color: #00ffcc;
   text-align: center;
+  text-shadow: 0 0 8px #00ffcccc;
 }
 
+/* About */
 .about p {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.8;
   text-align: center;
+  font-size: 1.1rem;
+  color: #d0d0d0;
+  text-shadow: 0 0 6px #00ffcc55;
 }
 
+/* Grids */
 .services,
 .portfolio,
 .skills-grid,
@@ -123,6 +202,7 @@ h2.section-title {
   text-align: center;
 }
 
+/* Service / project / skill / edu boxes */
 .service,
 .project,
 .skill-box,
@@ -131,35 +211,78 @@ h2.section-title {
   border: 1px solid #222;
   border-radius: 12px;
   background-color: #1a1a1a;
-}
-
-.portfolio a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.portfolio .project {
+  box-shadow: 0 0 6px #00ffcc33;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portfolio .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.service:hover,
+.project:hover,
+.skill-box:hover,
+.edu-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px #00ffccbb;
+  border-color: #00ffcc;
 }
 
-.portfolio .project:hover h4 {
-  color: #00ffcc;
+/* Portfolio Links */
+.portfolio a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: color 0.3s ease;
 }
 
+.portfolio .project {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+}
+
+.portfolio .project:hover h4,
 .portfolio .project:hover p {
   color: #00ffcc;
+  text-shadow: 0 0 6px #00ffccbb;
 }
 
-
-.project h4 {
-  margin-bottom: 0.5rem;
+.alert {
+  border-radius: 8px;
+  /* Rounded corners */
+  padding: 1rem;
+  /* Padding inside the alert */
+  margin: 1rem 0;
+  /* Margin around the alert */
+  font-size: 1.1rem;
+  /* Font size */
+  transition: transform 0.3s ease;
+  /* Transition for hover effect */
 }
 
+.alert:hover {
+  transform: scale(1.02);
+  /* Slightly scale up on hover */
+}
+
+/* Specific styles for different alert types */
+.alert-success {
+  background-color: rgba(76, 175, 80, 0.1);
+  /* Light green background */
+  color: #4CAF50;
+  /* Dark green text */
+}
+
+.alert-error {
+  background-color: rgba(244, 67, 54, 0.1);
+  /* Light red background */
+  color: #F44336;
+  /* Dark red text */
+}
+
+.alert-info {
+  background-color: rgba(33, 150, 243, 0.1);
+  /* Light blue background */
+  color: #2196F3;
+  /* Dark blue text */
+}
+
+/* Contact form styles */
 .contact form {
   max-width: 600px;
   margin: auto;
@@ -175,6 +298,17 @@ h2.section-title {
   border: none;
   background: #222;
   color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  box-shadow: inset 0 0 5px #00ffcc44;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  background-color: #000;
+  box-shadow: 0 0 10px #00ffcccc;
+  transition: all 0.25s ease;
 }
 
 .contact button {
@@ -185,22 +319,38 @@ h2.section-title {
   font-weight: bold;
   color: #000;
   cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #00ffccbb;
 }
 
+.contact button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00ffccdd;
+}
+
+/* Resume Button */
 .resume-btn {
-  display: inline-block;
   background: #00ffcc;
   color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-weight: bold;
-  text-align: center;
   margin: 1rem auto;
   text-decoration: none;
   display: block;
+  width: max-content;
+  box-shadow: 0 0 20px #00ffccbb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
+.resume-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #00ffccdd;
+}
+
+/* Social links */
 .social-links {
   display: flex;
   justify-content: center;
@@ -214,25 +364,40 @@ h2.section-title {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-shadow: 0 0 6px #00ffccaa;
 }
 
 .social-links a:hover {
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
   background: #111;
   color: #888;
+  font-size: 0.9rem;
+  text-shadow: 0 0 4px #00ffcc66;
 }
 
+/* Hamburger */
 .hamburger {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: #00ffcc;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.hamburger.open {
+  transform: rotate(90deg);
 }
 
 .mobile-nav {
@@ -245,6 +410,8 @@ footer {
   width: 100%;
   padding: 1rem 2rem;
   z-index: 999;
+  border-top: 1px solid #00ffcc77;
+  box-shadow: 0 10px 20px #00ffcc33;
 }
 
 .mobile-nav a {
@@ -252,6 +419,7 @@ footer {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .mobile-nav a:hover {
@@ -262,13 +430,30 @@ footer {
   display: inline-block;
   margin-top: 1rem;
   text-align: center;
+  width: 100%;
 }
 
-.hamburger.open i::before {
-  content: "\f00d";
-  /* FontAwesome 'X' */
+#custom-cursor {
+  position: fixed;
+  width: 20px;
+  /* Width of the cursor */
+  height: 20px;
+  /* Height of the cursor */
+  background-color: rgba(0, 255, 204, 0.8);
+  /* Color of the cursor */
+  border-radius: 50%;
+  /* Make it circular */
+  pointer-events: none;
+  /* Prevent it from interfering with mouse events */
+  transform: translate(-50%, -50%);
+  /* Center the cursor */
+  transition: transform 0.1s ease;
+  /* Smooth transition */
+  z-index: 9999;
+  /* Ensure it is above other elements */
 }
 
+/* Responsive */
 @media (min-width: 768px) {
   .hero {
     flex-direction: row;
@@ -303,5 +488,19 @@ footer {
 
   .hire-btn-desktop {
     display: none;
+  }
+}
+
+/* Animations */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
