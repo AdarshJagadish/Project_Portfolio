@@ -22,7 +22,7 @@
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#projects">projects</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-actions">
@@ -35,7 +35,7 @@
       <a href="#skills" onclick="closeMobileNav()">Skills</a>
       <a href="#education" onclick="closeMobileNav()">Education</a>
       <a href="#services" onclick="closeMobileNav()">Services</a>
-      <a href="#portfolio" onclick="closeMobileNav()">Portfolio</a>
+      <a href="#projects" onclick="closeMobileNav()">projects</a>
       <a href="#contact" onclick="closeMobileNav()">Contact</a>
       <a href="mailto:jagadishadarsh@gmail.com" target="_blank" class="hire-btn">Hire Me</a>
     </div>
@@ -46,9 +46,6 @@
   {% for category, message in messages %}
   <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
     {{ message }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
   {% endfor %}
   {% endif %}
@@ -118,9 +115,9 @@
     </div>
   </section>
 
-  <section class="section" id="portfolio">
-    <h2 class="section-title">Portfolio</h2>
-    <div class="portfolio">
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
       <a href="https://github.com/AdarshJagadish/Weather" target="_blank" rel="noopener">
         <div class="project">
           <h4>Weather App</h4>

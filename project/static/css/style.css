@@ -193,7 +193,7 @@ h2.section-title {
 
 /* Grids */
 .services,
-.portfolio,
+.projects,
 .skills-grid,
 .education-grid {
   display: grid;
@@ -224,20 +224,20 @@ h2.section-title {
   border-color: #00ffcc;
 }
 
-/* Portfolio Links */
-.portfolio a {
+/* projects Links */
+.projects a {
   text-decoration: none;
   color: inherit;
   display: block;
   transition: color 0.3s ease;
 }
 
-.portfolio .project {
+.projects .project {
   transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
 }
 
-.portfolio .project:hover h4,
-.portfolio .project:hover p {
+.projects .project:hover h4,
+.projects .project:hover p {
   color: #00ffcc;
   text-shadow: 0 0 6px #00ffccbb;
 }
