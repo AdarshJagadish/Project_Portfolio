@@ -193,7 +193,7 @@ h2.section-title {
 
 /* Grids */
 .services,
-.projects,
+.portfolio,
 .skills-grid,
 .education-grid {
   display: grid;
@@ -224,20 +224,20 @@ h2.section-title {
   border-color: #00ffcc;
 }
 
-/* projects Links */
-.projects a {
+/* Portfolio Links */
+.portfolio a {
   text-decoration: none;
   color: inherit;
   display: block;
   transition: color 0.3s ease;
 }
 
-.projects .project {
+.portfolio .project {
   transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
 }
 
-.projects .project:hover h4,
-.projects .project:hover p {
+.portfolio .project:hover h4,
+.portfolio .project:hover p {
   color: #00ffcc;
   text-shadow: 0 0 6px #00ffccbb;
 }
@@ -452,6 +452,83 @@ footer {
   z-index: 9999;
   /* Ensure it is above other elements */
 }
+
+
+/* SKILLS */
+.skills-grid .skill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skills-grid .skill-box i {
+  font-size: 3rem;
+  /* Adjust size as needed */
+  color: #00ffcc;
+  /* Icon color */
+  margin-bottom: 0.5rem;
+  /* Space between icon and text */
+}
+
+.skills-grid .skill-box p {
+  margin: 0;
+  /* Remove default margin */
+  font-size: 1rem;
+  /* Adjust text size as needed */
+  color: #d0d0d0;
+  /* Text color */
+}
+
+
+.social-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.floating-icon {
+  background-color: #00ffcc;
+  color: #000;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.floating-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-links {
+  display: none;
+  /* Initially hidden */
+  flex-direction: column;
+  position: absolute;
+  bottom: 60px;
+  /* Adjust based on the size of the floating icon */
+  right: 0;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.social-links a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+
 
 /* Responsive */
 @media (min-width: 768px) {

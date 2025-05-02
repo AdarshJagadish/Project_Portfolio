@@ -11,6 +11,8 @@
 </head>
 
 <body>
+  <div id="custom-cursor"></div>
+
   <!-- Background animated canvas -->
   <canvas id="bg-canvas"></canvas>
 
@@ -22,7 +24,7 @@
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#services">Services</a>
-      <a href="#projects">projects</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-actions">
@@ -35,7 +37,7 @@
       <a href="#skills" onclick="closeMobileNav()">Skills</a>
       <a href="#education" onclick="closeMobileNav()">Education</a>
       <a href="#services" onclick="closeMobileNav()">Services</a>
-      <a href="#projects" onclick="closeMobileNav()">projects</a>
+      <a href="#portfolio" onclick="closeMobileNav()">Portfolio</a>
       <a href="#contact" onclick="closeMobileNav()">Contact</a>
       <a href="mailto:jagadishadarsh@gmail.com" target="_blank" class="hire-btn">Hire Me</a>
     </div>
@@ -46,6 +48,9 @@
   {% for category, message in messages %}
   <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
     {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
   {% endfor %}
   {% endif %}
@@ -71,17 +76,45 @@
   <section class="section" id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-box">HTML</div>
-      <div class="skill-box">CSS</div>
-      <div class="skill-box">JavaScript</div>
-      <div class="skill-box">Python</div>
-      <div class="skill-box">Django</div>
-      <div class="skill-box">Flask</div>
-      <div class="skill-box">APIs</div>
-      <div class="skill-box">Bootstrap</div>
-      <div class="skill-box">React</div>
+      <div class="skill-box">
+        <i class="fab fa-html5"></i>
+        <p>HTML</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-css3-alt"></i>
+        <p>CSS</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-js"></i>
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-python"></i>
+        <p>Python</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-code"></i>
+        <p>Django</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-code"></i>
+        <p>Flask</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-plug"></i>
+        <p>APIs</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-bootstrap"></i>
+        <p>Bootstrap</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-react"></i>
+        <p>React</p>
+      </div>
     </div>
   </section>
+
 
   <section class="section" id="education">
     <h2 class="section-title">Education</h2>
@@ -115,9 +148,9 @@
     </div>
   </section>
 
-  <section class="section" id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects">
+  <section class="section" id="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio">
       <a href="https://github.com/AdarshJagadish/Weather" target="_blank" rel="noopener">
         <div class="project">
           <h4>Weather App</h4>
@@ -158,20 +191,23 @@
       target="_blank" rel="noopener">View My Resume</a>
   </section>
 
-  <section class="section" id="social">
-    <h2 class="section-title">Social Media</h2>
-    <div class="social-links">
-      <a href="https://github.com/AdarshJagadish" target="_blank" rel="noopener"><i class="fab fa-github"></i>
-        GitHub</a>
-      <a href="https://www.linkedin.com/in/adarshjagadish/" target="_blank" rel="noopener"><i
-          class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://www.instagram.com/lucifer__ftw/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>
-        Instagram</a>
-      <a href="https://www.threads.net/@lucifer__ftw?xmt=AQGzQN18AZd4xcMcElUeaSbvboNVWkqfiYlsU95KJQSmyGg"
-        target="_blank" rel="noopener"><i class="fas fa-hashtag"></i> Threads</a>
-      <a href="https://wa.me/919846675300" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <br>
+
+  <div class="social-popup">
+    <div class="floating-icon" onclick="toggleSocialMedia()">
+      <i class="fas fa-plus"></i> <!-- Changed to a plus icon -->
     </div>
-  </section>
+    <div class="social-links" id="socialLinks">
+      <a href="https://github.com/AdarshJagadish" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/adarshjagadish/" target="_blank" rel="noopener"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/lucifer__ftw/" target="_blank" rel="noopener"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://www.threads.net/@lucifer__ftw?xmt=AQGzQN18AZd4xcMcElUeaSbvboNVWkqfiYlsU95KJQSmyGg"
+        target="_blank" rel="noopener"><i class="fas fa-hashtag"></i></a>
+      <a href="https://wa.me/919846675300" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
 
   <footer>
     © 2025 Adarsh Jagadish. All rights reserved.

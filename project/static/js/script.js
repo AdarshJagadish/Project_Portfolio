@@ -1,5 +1,5 @@
-// Mobile navigation toggle with hamburger animation
-function toggleMobileNav() {
+ // Mobile navigation toggle with hamburger animation
+ function toggleMobileNav() {
   const nav = document.getElementById("mobileNav");
   const burger = document.querySelector(".hamburger");
 
@@ -93,3 +93,12 @@ function animate() {
 }
 
 animate();
+
+function toggleSocialMedia() {
+  const socialLinks = document.getElementById("socialLinks");
+  if (socialLinks.style.display === "flex") {
+    socialLinks.style.display = "none";
+  } else {
+    socialLinks.style.display = "flex";
+  }
+}

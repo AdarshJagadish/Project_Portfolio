@@ -465,6 +465,83 @@
       /* Ensure it is above other elements */
     }
 
+
+    /* SKILLS */
+    .skills-grid .skill-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .skills-grid .skill-box i {
+      font-size: 3rem;
+      /* Adjust size as needed */
+      color: #00ffcc;
+      /* Icon color */
+      margin-bottom: 0.5rem;
+      /* Space between icon and text */
+    }
+
+    .skills-grid .skill-box p {
+      margin: 0;
+      /* Remove default margin */
+      font-size: 1rem;
+      /* Adjust text size as needed */
+      color: #d0d0d0;
+      /* Text color */
+    }
+
+
+    .social-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .floating-icon {
+      background-color: #00ffcc;
+      color: #000;
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .social-links {
+      display: none;
+      /* Initially hidden */
+      flex-direction: column;
+      position: absolute;
+      bottom: 60px;
+      /* Adjust based on the size of the floating icon */
+      right: 0;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    }
+
+    .social-links a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-size: 1.5rem;
+      margin: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+
+
+
     /* Responsive */
     @media (min-width: 768px) {
       .hero {
@@ -585,17 +662,45 @@
   <section class="section" id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-box">HTML</div>
-      <div class="skill-box">CSS</div>
-      <div class="skill-box">JavaScript</div>
-      <div class="skill-box">Python</div>
-      <div class="skill-box">Django</div>
-      <div class="skill-box">Flask</div>
-      <div class="skill-box">APIs</div>
-      <div class="skill-box">Bootstrap</div>
-      <div class="skill-box">React</div>
+      <div class="skill-box">
+        <i class="fab fa-html5"></i>
+        <p>HTML</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-css3-alt"></i>
+        <p>CSS</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-js"></i>
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-python"></i>
+        <p>Python</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-code"></i>
+        <p>Django</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-code"></i>
+        <p>Flask</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-plug"></i>
+        <p>APIs</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-bootstrap"></i>
+        <p>Bootstrap</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-react"></i>
+        <p>React</p>
+      </div>
     </div>
   </section>
+
 
   <section class="section" id="education">
     <h2 class="section-title">Education</h2>
@@ -672,20 +777,23 @@
       target="_blank" rel="noopener">View My Resume</a>
   </section>
 
-  <section class="section" id="social">
-    <h2 class="section-title">Social Media</h2>
-    <div class="social-links">
-      <a href="https://github.com/AdarshJagadish" target="_blank" rel="noopener"><i class="fab fa-github"></i>
-        GitHub</a>
-      <a href="https://www.linkedin.com/in/adarshjagadish/" target="_blank" rel="noopener"><i
-          class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://www.instagram.com/lucifer__ftw/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>
-        Instagram</a>
-      <a href="https://www.threads.net/@lucifer__ftw?xmt=AQGzQN18AZd4xcMcElUeaSbvboNVWkqfiYlsU95KJQSmyGg"
-        target="_blank" rel="noopener"><i class="fas fa-hashtag"></i> Threads</a>
-      <a href="https://wa.me/919846675300" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <br>
+
+  <div class="social-popup">
+    <div class="floating-icon" onclick="toggleSocialMedia()">
+      <i class="fas fa-plus"></i> <!-- Changed to a plus icon -->
     </div>
-  </section>
+    <div class="social-links" id="socialLinks">
+      <a href="https://github.com/AdarshJagadish" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/adarshjagadish/" target="_blank" rel="noopener"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/lucifer__ftw/" target="_blank" rel="noopener"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://www.threads.net/@lucifer__ftw?xmt=AQGzQN18AZd4xcMcElUeaSbvboNVWkqfiYlsU95KJQSmyGg"
+        target="_blank" rel="noopener"><i class="fas fa-hashtag"></i></a>
+      <a href="https://wa.me/919846675300" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
 
   <footer>
     © 2025 Adarsh Jagadish. All rights reserved.
@@ -790,7 +898,16 @@
     }
 
     animate();
-    
+
+    function toggleSocialMedia() {
+      const socialLinks = document.getElementById("socialLinks");
+      if (socialLinks.style.display === "flex") {
+        socialLinks.style.display = "none";
+      } else {
+        socialLinks.style.display = "flex";
+      }
+    }
+
   </script>
 
 </body>
