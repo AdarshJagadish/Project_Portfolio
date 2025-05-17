@@ -203,9 +203,44 @@
       text-shadow: 0 0 6px #00ffcc55;
     }
 
+    .portfolio {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      text-align: center;
+    }
+
+    .project {
+      padding: 2rem;
+      border: 1px solid #222;
+      border-radius: 12px;
+      background-color: #1a1a1a;
+      box-shadow: 0 0 6px #00ffcc33;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 300px;
+      /* Set a fixed height */
+      width: 250px;
+      /* Set a fixed width */
+      display: flex;
+      /* Use flexbox to center content */
+      flex-direction: column;
+      /* Stack children vertically */
+      justify-content: space-between;
+      /* Space out children */
+    }
+
+    .project img {
+      max-width: 100%;
+      /* Ensure the image is responsive */
+      height: auto;
+      /* Maintain aspect ratio */
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      /* Space between image and text */
+    }
+
     /* Grids */
     .services,
-    .portfolio,
     .education-grid {
       display: grid;
       gap: 2rem;
@@ -720,7 +755,6 @@
       From crafting REST APIs to frontend UI magic, I love creating experiences that people enjoy using.
     </p>
   </section>
-
   <section class="section" id="skills" aria-label="Skills section">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid" role="list">
@@ -728,10 +762,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fab fa-html5" aria-hidden="true"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/html-5--v1.png" alt="html-5--v1" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fab fa-html5"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/html-5--v1.png" alt="html-5--v1" />
             </div>
           </div>
         </div>
@@ -741,10 +775,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fab fa-css3-alt" aria-hidden="true"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/css3.png" alt="css3" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fab fa-css3-alt"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/css3.png" alt="css3" />
             </div>
           </div>
         </div>
@@ -754,10 +788,12 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fab fa-js" aria-hidden="true"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/javascript--v1.png"
+                alt="javascript--v1" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fab fa-js"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/javascript--v1.png"
+                alt="javascript--v1" />
             </div>
           </div>
         </div>
@@ -767,10 +803,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fab fa-python" aria-hidden="true"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fab fa-python"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
             </div>
           </div>
         </div>
@@ -780,10 +816,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fas fa-code" aria-hidden="true"></i>
+              <img width="100" height="100" src="https://img.icons8.com/ios/100/django.png" alt="django" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fas fa-code"></i>
+              <img width="100" height="100" src="https://img.icons8.com/ios/100/django.png" alt="django" />
             </div>
           </div>
         </div>
@@ -793,10 +829,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fas fa-code" aria-hidden="true"></i>
+              <img width="96" height="96" src="https://img.icons8.com/nolan/96/flask.png" alt="flask" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fas fa-code"></i>
+              <img width="96" height="96" src="https://img.icons8.com/nolan/96/flask.png" alt="flask" />
             </div>
           </div>
         </div>
@@ -806,10 +842,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fas fa-plug" aria-hidden="true"></i>
+              <img width="100" height="100" src="https://img.icons8.com/ios/100/api-settings.png" alt="api-settings" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fas fa-plug"></i>
+              <img width="100" height="100" src="https://img.icons8.com/ios/100/api-settings.png" alt="api-settings" />
             </div>
           </div>
         </div>
@@ -819,10 +855,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fab fa-bootstrap" aria-hidden="true"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color-glass/96/bootstrap.png" alt="bootstrap" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fab fa-bootstrap"></i>
+              <img width="96" height="96" src="https://img.icons8.com/color-glass/96/bootstrap.png" alt="bootstrap" />
             </div>
           </div>
         </div>
@@ -832,10 +868,10 @@
         <div class="icon-flip-container">
           <div class="icon-flip-inner">
             <div class="icon-front">
-              <i class="fab fa-react" aria-hidden="true"></i>
+              <img width="80" height="80" src="https://img.icons8.com/officel/80/react.png" alt="react" />
             </div>
             <div class="icon-back" aria-hidden="true">
-              <i class="fab fa-react"></i>
+              <img width="80" height="80" src="https://img.icons8.com/officel/80/react.png" alt="react" />
             </div>
           </div>
         </div>
@@ -865,7 +901,6 @@
   <section class="section" id="portfolio">
     <h2 class="section-title">Projects</h2>
     <div class="portfolio">
-
       <a href="https://github.com/AdarshJagadish/Project_React_TodoList" target="_blank" rel="noopener">
         <div class="project">
           <img src="{{ url_for('static', filename='images/todo.jpg') }}" alt="To-Do List" class="project-image" />
